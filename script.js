@@ -5,6 +5,8 @@ let modal = document.querySelector(".modal");
 let modalcont = document.querySelector(".modal-content");
 let maincont=document.querySelector(".main-cont");
 let textarea=document.querySelector(".textarea");
+let createbtn=document.querySelector(".create");
+let cancelbtn=document.querySelector(".cancel");
 let toolboxcolors=document.querySelectorAll(".color");
 let color=["purple","pink","red","mustard"];
 let priorityclr=document.querySelectorAll(".priority-color");
@@ -22,6 +24,10 @@ if(localStorage.getItem("JIRRA_ticket")){
         createticket(ticketobj.ticketcolor,ticketobj.tickettask,ticketobj.ticketid);
     })
 }
+
+cancelbtn.addEventListener("click", (e)=>{
+    modal.style.display = "none";
+})
 
 
 for(let i=0; i<toolboxcolors.length; i++){
@@ -92,14 +98,13 @@ removebtn.addEventListener("click", (e)=>{
    
 })
 
-modalcont.addEventListener("keydown",(e)=>{
-    let key=e.key;
-    if(key==="Shift"){
+createbtn.addEventListener("click",(e)=>{
+   
         createticket(modalpriclr,textarea.value);
         modal.style.display="none";
         textarea.value="";
 
-    }
+    
 })
 function createticket(ticketcolor,tickettask,ticketid) {
     let id =ticketid || shortid();
