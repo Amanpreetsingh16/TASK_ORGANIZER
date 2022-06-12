@@ -88,7 +88,7 @@ modalcont.addEventListener("keydown",(e)=>{
     if(key==="Shift"){
         createticket(modalpriclr,textarea.value);
         modalcont.style.display="none";
-        textarea.value=" ";
+        textarea.value="";
 
     }
 })
