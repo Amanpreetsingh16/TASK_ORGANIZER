@@ -6,6 +6,13 @@ body{
     padding: 0;
     background-color: #d2dae2;
 }
+
+.main-container{
+    height: 100vh;
+    width: 100vw;
+
+    position: relative;
+}
 .toolbox-cont{
     height: 5rem;
     background-color: #3d3d3d;
@@ -61,14 +68,27 @@ body{
 .action-cont>*:hover{
 background-color: #485460;
 }
+
 .modal{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+
+    background-color: #00000040;
+}
+
+
+.modal-content{
     height: 50vh;
     width: 50vw;
+    display: flex;
     background-color: darkgray;
     position: absolute;
     top: calc((100vh - 50vh)/2);
     left: calc((100vw - 50vw)/2);
-    display: none;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;}
 .textarea{
     height: 100%;
@@ -116,6 +136,10 @@ background-color: #485460;
     height: calc((100% - 1rem - 2rem - 2rem));
     padding: 0.5rem;
     outline: none;
+    white-space: pre-wrap;
+    overflow-y: auto;
+    overflow-x: hidden;
+
 }
 .main-cont{
     display: flex;
@@ -154,3 +178,25 @@ background-color: #485460;
         
     }
 }
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 2px solid;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }

@@ -1,7 +1,8 @@
 
 let addbtn = document.querySelector(".add-btn");
 let removebtn=document.querySelector(".remove-btn");
-let modalcont = document.querySelector(".modal");
+let modal = document.querySelector(".modal");
+let modalcont = document.querySelector(".modal-content");
 let maincont=document.querySelector(".main-cont");
 let textarea=document.querySelector(".textarea");
 let toolboxcolors=document.querySelectorAll(".color");
@@ -70,15 +71,23 @@ addbtn.addEventListener("click", (e) => {
     //if addflag=false /remove modal
     addflag = !addflag;
     if (addflag) {
-        modalcont.style.display = "flex";
+        modal.style.display = "flex";
     }
     else {
 
-        modalcont.style.display = "none";
+        modal.style.display = "none";
     }
 })
 removebtn.addEventListener("click", (e)=>{
     removeflag=!removeflag;
+    if(removeflag){
+        console.log("Remove Flag", true);
+        removebtn.style.backgroundColor="rgb(50 46 46)";
+    } else { 
+        console.log("Remove Flag", true);
+        removebtn.style.backgroundColor="";
+
+    }
     
    
 })
@@ -87,7 +96,7 @@ modalcont.addEventListener("keydown",(e)=>{
     let key=e.key;
     if(key==="Shift"){
         createticket(modalpriclr,textarea.value);
-        modalcont.style.display="none";
+        modal.style.display="none";
         textarea.value="";
 
     }
