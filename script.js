@@ -27,6 +27,7 @@ if(localStorage.getItem("JIRRA_ticket")){
 
 cancelbtn.addEventListener("click", (e)=>{
     modal.style.display = "none";
+    textarea.value="";
 })
 
 
